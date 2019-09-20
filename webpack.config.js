@@ -1,29 +1,52 @@
-// entry  -> output
-const path = require('path');
 
-module.exports = {
-    entry: './src/app.js',
-    output: {
-        path: path.join(__dirname, 'public'),
-        filename: 'bundle.js'
-    },
-    module: {
-        rules: [{
-            loader: 'babel-loader',
-            test: /\.js$/,
-            exclude: /node_modules/
-        }, {
-            test: /\.s?css$/,
-            use: [
-                'style-loader',
-                'css-loader',
-                'sass-loader'
-            ]
-        }]
-    },
-    devtool: 'cheap-module-eval-source-map',
-    devServer: {
-        contentBase: path.join(__dirname, 'public'),
-        historyApiFallback: true
+const path = require('path');
+const EtractTextPlugin = require('extract-text-webpack-plugin');
+
+
+module.exports = (env) => {
+const isProduction = env === 'production';
+const CssExtract = new EtractTextPlugin ('styles.css');
+    
+    return {
+        entry: './src/app.js',
+        output: {
+            path: path.join(__dirname, 'public'),
+            filename: 'bundle.js'
+        },
+        module: {
+            rules: [{
+                loader: 'babel-loader',
+                test: /\.js$/,
+                exclude: /node_modules/
+            }, {
+                test: /\.s?css$/,
+                use: CssExtract.extract({
+            
+                    use: [
+                    {
+                        loader:'css-loader',
+                        options:{
+                            sourceMap: true
+                        }
+                    },
+                       { 
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    }
+                    ]
+            
+                })
+            }]
+        },
+        plugins:[
+            CssExtract
+        ],
+        devtool: isProduction ? 'source-map' : 'inline-source-map',
+        devServer: {
+            contentBase: path.join(__dirname, 'public'),
+            historyApiFallback: true
+        }
     }
-};
+} 
