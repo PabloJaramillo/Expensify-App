@@ -3595,11 +3595,6 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
-node-bin-setup@^1.0.0:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/node-bin-setup/-/node-bin-setup-1.0.6.tgz#4b5c9bb937ece702d7069b36ca78af4684677528"
-  integrity sha512-uPIxXNis1CRbv1DwqAxkgBk5NFV3s7cMN/Gf556jSw6jBvV7ca4F9lRL/8cALcZecRibeqU+5dFYqFFmzv5a0Q==
-
 node-fetch@^1.0.1:
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-1.7.1.tgz#899cb3d0a3c92f952c47f1b876f4c8aeabd400d5"
@@ -3706,13 +3701,6 @@ node-sass@4.5.3:
     request "^2.79.0"
     sass-graph "^2.1.1"
     stdout-stream "^1.4.0"
-
-node@^12.10.0:
-  version "12.10.0"
-  resolved "https://registry.yarnpkg.com/node/-/node-12.10.0.tgz#5b9c5c6e3420965052bccd80e404c7620049a050"
-  integrity sha512-gzhu/wPSyupcu4TWzOoCsy9r1NONUZyzBQuItHeiRKWA5nov2pqHa+IO3CKNBHDu85nRw8yq13sw4I8S3aJxIQ==
-  dependencies:
-    node-bin-setup "^1.0.0"
 
 "nopt@2 || 3":
   version "3.0.6"
