@@ -1,8 +1,8 @@
 {
-  "name": "expensify",
+  "name": "expensify-app",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Andrew Mead",
+  "author": "Pablo",
   "license": "MIT",
   "scripts": {
     "build:dev": "webpack",
@@ -26,7 +26,6 @@
     "firebase": "4.2.0",
     "moment": "2.18.1",
     "node-sass": "4.5.3",
-    "node": "10.16.3",
     "normalize.css": "7.0.0",
     "numeral": "2.0.6",
     "react": "15.6.1",
